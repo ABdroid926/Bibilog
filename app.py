@@ -66,6 +66,11 @@ else :
       USER_ROW = users_df.loc[users_df['username']== USER_NAME]
       if not USER_ROW.empty: 
          st.error("❌ Oops,Username already exists!")
+
+      elif not USER_NAME.strip() & USER_PASS1.strip(): 
+         st.error("❌ Please fill out all of the fields!")
+      elif not USER_PASS2.strip() : 
+         st.error("❌ Please confirm your password!")
       else :  
           payload = {'action': 'register','username':USER_NAME,'password':USER_PASS2}
           URL = st.secrets["script"] 
