@@ -63,7 +63,7 @@ else :
        if USER_PASS1 != USER_PASS2 : 
           st.error("❌ Oops, Passwords do not match!") 
    else: 
-      USER_ROW = users_df.loc[users_df['Users']== USER_NAME]
+      USER_ROW = users_df.loc[users_df['username']== USER_NAME]
       if not USER_ROW.empty: 
          st.error("❌ Oops,Username already exists!")
       else :  
