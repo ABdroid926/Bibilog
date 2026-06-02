@@ -74,7 +74,7 @@ else :
           if response.text == "Success" : 
             st.success( "✅ Account Created! Please do Log In!")
           else : 
-            st.error("❌ Oops,An Error Occured!")
+            st.error(f"❌ Oops, An Error Occurred: {response.text}")
 
 
 
