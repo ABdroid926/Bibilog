@@ -21,7 +21,7 @@ def fetch_gsheet_data(tab_name) :
  df = pd.read_csv(url)
  return df 
 
-with st.spinner("Great reads await you..."):
+
  users_df = fetch_gsheet_data("Users")
  books_df = fetch_gsheet_data("Books") 
 
@@ -39,7 +39,7 @@ if choice == 'Log In!' :
       user_pass = st.text_input("Please enter your password :", type = "password")
       submit_button = st.form_submit_button(label="🚀 Log In!" ) 
 
-   if submit_button: 
+   if submit_button and choice == 'Log In!': 
        user_row = users_df.loc[users_df['username']== user_name] 
        if not user_row.empty: 
           saved_pass = user_row['password'].iloc[0]
@@ -59,7 +59,7 @@ else :
     SUBMIT_BUTTON = st.form_submit_button(label= "🫆 Sign Up!") 
 
 
-   if SUBMIT_BUTTON: 
+   if SUBMIT_BUTTON and choice == "Sign Up!": 
 
       if not USER_NAME.strip() or not USER_PASS1.strip() or not USER_PASS2.strip(): 
          st.error("❌ Please fill out all of the fields!")
