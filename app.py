@@ -22,8 +22,8 @@ def fetch_gsheet_data(tab_name) :
  return df 
 
 with st.spinner("Great reads await you..."):
-users_df = fetch_gsheet_data("Users")
-books_df = fetch_gsheet_data("Books") 
+ users_df = fetch_gsheet_data("Users")
+ books_df = fetch_gsheet_data("Books") 
 
 choice = st.radio(
    "📌 Select your preferred action!",
