@@ -60,17 +60,16 @@ else :
 
 
    if SUBMIT_BUTTON: 
-       if USER_PASS1 != USER_PASS2 : 
+
+      if not USER_NAME.strip() or not USER_PASS1.strip() or not USER_PASS2.strip(): 
+         st.error("❌ Please fill out all of the fields!")
+   
+      elif USER_PASS1 != USER_PASS2 : 
           st.error("❌ Oops, Passwords do not match!") 
-   else: 
-      USER_ROW = users_df.loc[users_df['username']== USER_NAME]
-      if not USER_ROW.empty: 
+       
+      elif not users_df.loc[users_df['username']== USER_NAME].empty :
          st.error("❌ Oops,Username already exists!")
 
-      elif not USER_NAME.strip() or USER_PASS1.strip(): 
-         st.error("❌ Please fill out all of the fields!")
-      elif not USER_PASS2.strip() : 
-         st.error("❌ Please confirm your password!")
       else :  
           payload = {'action': 'register','username':USER_NAME,'password':USER_PASS2}
           URL = st.secrets["script"] 
@@ -80,6 +79,7 @@ else :
             st.success( "✅ Account Created! Please do Log In!")
           else : 
             st.error(f"❌ Oops, An Error Occurred: {response.text}")
+
 
 
 
