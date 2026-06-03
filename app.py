@@ -38,7 +38,7 @@ if choice == 'Log In!' :
         user_pass = st.text_input("Please enter your password :", type = "password")
        
 
-        if  submit_button = st.form_submit_button(label="🚀 Log In!" ): 
+        if st.form_submit_button(label="🚀 Log In!" ): 
            user_row = users_df.loc[users_df['username']== user_name] 
            if not user_row.empty: 
               saved_pass = user_row['password'].iloc[0]
@@ -57,7 +57,7 @@ else :
            USER_PASS2 = st.text_input("Please confirm your password :", type = "password")
            
 
-      if SUBMIT_BUTTON = st.form_submit_button(label= "🫆 Sign Up!") : 
+      if st.form_submit_button(label= "🫆 Sign Up!") : 
          if not USER_NAME.strip() or not USER_PASS1.strip() or not USER_PASS2.strip(): 
             st.error("❌ Please fill out all of the fields!")
          elif USER_PASS1 != USER_PASS2 : 
