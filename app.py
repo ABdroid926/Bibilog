@@ -51,36 +51,36 @@ if choice == 'Log In!' :
          else : 
               st.error("🤔 Username not found!") 
 
-else : 
-   with st.form("Sign_Up_Form"):
-    USER_NAME = st.text_input("Please enter your username :")
-    USER_PASS1 = st.text_input("Please enter your password : ", type = "password")
-    USER_PASS2 = st.text_input("Please confirm your password :", type = "password")
-    SUBMIT_BUTTON = st.form_submit_button(label= "🫆 Sign Up!") 
+    else : 
+      with st.form("Sign_Up_Form"):
+      USER_NAME = st.text_input("Please enter your username :")
+      USER_PASS1 = st.text_input("Please enter your password : ", type = "password")
+      USER_PASS2 = st.text_input("Please confirm your password :", type = "password")
+      SUBMIT_BUTTON = st.form_submit_button(label= "🫆 Sign Up!") 
 
 
-   if SUBMIT_BUTTON and choice == "Sign Up!": 
+     if SUBMIT_BUTTON and choice == "Sign Up!": 
 
-      if not USER_NAME.strip() or not USER_PASS1.strip() or not USER_PASS2.strip(): 
-         st.error("❌ Please fill out all of the fields!")
+        if not USER_NAME.strip() or not USER_PASS1.strip() or not USER_PASS2.strip(): 
+          st.error("❌ Please fill out all of the fields!")
    
-      elif USER_PASS1 != USER_PASS2 : 
+        elif USER_PASS1 != USER_PASS2 : 
           st.error("❌ Oops, Passwords do not match!") 
        
-      elif not users_df.loc[users_df['username']== USER_NAME].empty :
-         st.error("❌ Oops,Username already exists!")
+        elif not users_df.loc[users_df['username']== USER_NAME].empty :
+          st.error("❌ Oops,Username already exists!")
 
-      else :  
-          payload = {'action': 'register','username':USER_NAME,'password':USER_PASS2}
-          URL = st.secrets["script"] 
-          response = requests.post(URL, json=payload)
+       else :  
+           payload = {'action': 'register','username':USER_NAME,'password':USER_PASS2}
+           URL = st.secrets["script"] 
+           response = requests.post(URL, json=payload)
                  
-          if response.text == "Success" : 
-            st.success( "✅ Account Created! Please do Log In!")
-            st.cache_data.clear() 
-            st.rerun()
-          else : 
-            st.error(f"❌ Oops, An Error Occurred: {response.text}")
+           if response.text == "Success" : 
+             st.success( "✅ Account Created! Please do Log In!")
+             st.cache_data.clear() 
+             st.rerun()
+           else : 
+             st.error(f"❌ Oops, An Error Occurred: {response.text}")
 
 
 
