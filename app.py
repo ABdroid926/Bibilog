@@ -41,15 +41,15 @@ if choice == 'Log In!' :
 
      if submit_button and choice == 'Log In!': 
          user_row = users_df.loc[users_df['username']== user_name] 
-       if not user_row.empty: 
-          saved_pass = user_row['password'].iloc[0]
-          if saved_pass == user_pass : 
-             st.session_state['logged_in'] = True 
-             st.rerun()  
-          else:  
-            st.error("❌ Password Incorrect!")
-       else : 
-         st.error("🤔 Username not found!") 
+         if not user_row.empty: 
+            saved_pass = user_row['password'].iloc[0]
+           if saved_pass == user_pass : 
+              st.session_state['logged_in'] = True 
+              st.rerun()  
+           else:  
+              st.error("❌ Password Incorrect!")
+         else : 
+              st.error("🤔 Username not found!") 
 
 else : 
    with st.form("Sign_Up_Form"):
