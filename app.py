@@ -32,12 +32,11 @@ choice = st.radio(
    horizontal = True    
 )
 
-
-if choice == 'Log In!' : 
-   with st.form("Login_Form"):
-      user_name = st.text_input("Please enter your username :")
-      user_pass = st.text_input("Please enter your password :", type = "password")
-      submit_button = st.form_submit_button(label="🚀 Log In!" ) 
+ if choice == 'Log In!' : 
+ with st.form("Login_Form"):
+ user_name = st.text_input("Please enter your username :")
+ user_pass = st.text_input("Please enter your password :", type = "password")
+ submit_button = st.form_submit_button(label="🚀 Log In!" ) 
 
      if submit_button and choice == 'Log In!': 
          user_row = users_df.loc[users_df['username']== user_name] 
