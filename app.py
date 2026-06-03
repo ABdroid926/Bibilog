@@ -50,7 +50,7 @@ if choice == 'Log In!' :
         else : 
              st.error("🤔 Username not found!") 
 
- else : 
+else : 
       with st.form("Sign_Up_Form"):
            USER_NAME = st.text_input("Please enter your username :")
            USER_PASS1 = st.text_input("Please enter your password : ", type = "password")
