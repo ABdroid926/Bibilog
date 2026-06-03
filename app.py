@@ -73,7 +73,7 @@ else :
                 st.success( "✅ Account Created! Please do Log In!")
                 st.cache_data.clear() 
                 st.rerun()
-           else : 
+            else : 
                 st.error(f"❌ Oops, An Error Occurred: {response.text}")
 
 
