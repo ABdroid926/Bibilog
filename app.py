@@ -9,7 +9,7 @@ st.set_page_config(
 )
 
 st.title("📚 Bibilog : Library Management System")
-
+sheet_url = st.secrets["SHEET_URL"]
 
 radiobutton = st.radio("📌 Please do choose an action!",[" 📖 Log In!","✏️ Sign Up !"],horizontal = True) 
 
@@ -18,5 +18,11 @@ if radiobutton == " 📖 Log In!" :
     user_name = st.text_input("Please do enter your username! :") 
     user_pass = st.text_input("Please do enter your password! :",type = "password") 
     submit = st.form_submit_button("🚀 Log In!") 
+    
+  if submit: 
+    payload = {"action":"register","username": user_name,"password":user_pass}
+    response = rq.post(sheet_url,json = payload) 
+    result = response.json() 
+
 
    
