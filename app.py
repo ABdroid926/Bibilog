@@ -11,4 +11,12 @@ st.set_page_config(
 st.title("📚 Bibilog : Library Management System")
 
 
-radiobutton = st.radio("📌 Please do choose an action!",[" 📖 Log In!","✏️ Sign Up !"],horizontal = True)         
+radiobutton = st.radio("📌 Please do choose an action!",[" 📖 Log In!","✏️ Sign Up !"],horizontal = True) 
+
+if radiobutton = " 📖 Log In!" : 
+  with st.form("LogIn_Page"): 
+    user_name = st.text_input("Please do enter your username! :") 
+    user_pass = st.text_input("Please do enter your password! :",type = "password") 
+    submit = st.form_submit_button("🚀 Log In!") 
+
+   
