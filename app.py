@@ -22,7 +22,7 @@ if radiobutton == " 📖 Log In!" :
   if submit: 
     payload = {"action":"register","username": user_name,"password":user_pass}
     response = rq.post(sheet_url,json = payload) 
-    result = response.json() 
+    result = response.text
     st.write(result)
 
 
