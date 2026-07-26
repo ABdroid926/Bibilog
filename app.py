@@ -11,4 +11,4 @@ st.set_page_config(
 st.title("📚 Bibilog : Library Management System")
 
 
-st.radio("📌 Please do choose an action!",[" 📖 Log In!"],["✏️ Sign Up !"])         
+radiobutton = st.radio("📌 Please do choose an action!",[" 📖 Log In!"],["✏️ Sign Up !"])         
