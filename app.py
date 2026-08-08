@@ -26,10 +26,10 @@ if st.session_state["logged in"] == "False" :
      user_pass = st.text_input("Please do enter your password! :",type = "password") 
      submit = st.form_submit_button("🚀 Log In!") 
     
-  if submit: 
-     payload = {"action":"login","username": user_name,"password":user_pass}
-     response = rq.post(sheet_url,json = payload) 
-     RESULT = response.text
+    if submit: 
+      payload = {"action":"login","username": user_name,"password":user_pass}
+      response = rq.post(sheet_url,json = payload) 
+      RESULT = response.text
     
     
       if RESULT == "Success" : 
@@ -42,10 +42,10 @@ if st.session_state["logged in"] == "False" :
        st.session_state["is_admin"] = "False"
        st.rerun() 
       
-   else : 
-      st.error("❌ Oops, we could'nt find your account. Please check your credentials!!")
+  else : 
+       st.error("❌ Oops, we could'nt find your account. Please check your credentials!!")
    
-  elif radiobutton == "✏️ Sign Up !" : 
+   elif radiobutton == "✏️ Sign Up !" : 
     with st.form("SignUp_Page"):
       new_user = st.text_input("Please do enter your username! :")
       new_pass = st.text_input("Please do enter your password! :",type="password")
