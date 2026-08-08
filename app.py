@@ -71,10 +71,10 @@ else:
          payload = {"action": "get_user_books", "username": st.session_state["username"]}
          response = rq.post(sheet_url, json=payload)
          result = response.json() 
-          if not result : 
-              st.success("You currently have no checked out books, Why not visit the library?)
+         if not result : 
+              st.success("You currently have no checked out books, Why not visit the library?")
 
-          else : 
+         else : 
               st.json(result)
          
 
