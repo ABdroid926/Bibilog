@@ -38,6 +38,9 @@ if radiobutton == " 📖 Log In!" and st.session_state["logged in"] == "False" :
     elif RESULT == "Admin Success"  :
       st.session_state["logged in"] = "True"
       st.session_state["is_admin"] = "False"
+      
+    else : 
+      st.error("❌ Oops, we could'nt find your account. Please check your credentials!!")
    
 elif radiobutton == "✏️ Sign Up !" : 
     with st.form("SignUp_Page"):
