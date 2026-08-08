@@ -9,6 +9,7 @@ st.set_page_config(
 )
 
 st.title("📚 Bibilog : Library Management System")
+st.divider()
 sheet_url = st.secrets["SHEET_URL"]
 
 if "logged in" not in st.session_state:
@@ -16,6 +17,9 @@ if "logged in" not in st.session_state:
 
 if "is_admin" not in st.session_state:
     st.session_state["is_admin"] = "False"
+
+if "username" not in st.session_state : 
+    st.session_state["username"] = ""
 
 if st.session_state["logged in"] == "False":
     radiobutton = st.radio("📌 Please do choose an action!", [" 📖 Log In!", "✏️ Sign Up !"], horizontal=True)
@@ -34,6 +38,7 @@ if st.session_state["logged in"] == "False":
             if RESULT == "Success":
                 st.session_state["logged in"] = "True"
                 st.session_state["is_admin"] = "False"
+                st.session_state["username"] = user_name
                 st.rerun()
                 
             elif RESULT == "Admin Success":
@@ -60,6 +65,12 @@ if st.session_state["logged in"] == "False":
             else:
                 st.success("✅ Alright! your new account is created! Please do Log In!!")
                 st.rerun()
+ else:
+     if st.session_state["username"] == user_name and st.session_state["is_admin"] == "False" :
+         
+
+
+
 
 
 
