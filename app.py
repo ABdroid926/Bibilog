@@ -77,7 +77,7 @@ else:
          except :
           result = response.text.strip()
              
-          
+         st.subheader("Your checked out books:") 
          for Books in result : 
              with st.container(border= True):
                  st.markdown(f"**:blue[{Books.get("title")}]**")
