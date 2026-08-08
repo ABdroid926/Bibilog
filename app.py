@@ -82,7 +82,7 @@ else:
              with st.container(border= True):
                  st.subheader(Books.get("title"))
                  st.divider() 
-                 date = datetime.fromisoformat((Books.get(dueDate)))
+                 date = datetime.strptime((Books.get(dueDate)))
                  Date = date.strftime("%d-%m-%Y")
                  st.subheader(Date)
                  st.divider() 
