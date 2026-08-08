@@ -34,11 +34,13 @@ if radiobutton == " 📖 Log In!" and st.session_state["logged in"] == "False" :
     if RESULT == "Success" : 
       st.session_state["logged in"] = "True"
       st.session_state["is_admin"] = "False"
+      st.rerun()
       st.error("calibration")
       
     elif RESULT == "Admin Success"  :
       st.session_state["logged in"] = "True"
       st.session_state["is_admin"] = "False"
+      st.rerun() 
       
     else : 
       st.error("❌ Oops, we could'nt find your account. Please check your credentials!!")
