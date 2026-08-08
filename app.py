@@ -65,7 +65,7 @@ if st.session_state["logged in"] == "False":
             else:
                 st.success("✅ Alright! your new account is created! Please do Log In!!")
                 st.rerun()
- else:
+else:
      if st.session_state["username"] == user_name and st.session_state["is_admin"] == "False" :
          
 
