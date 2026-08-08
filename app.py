@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import requests as rq
+import datetime as dt 
 
 st.set_page_config(
     page_title="Bibilog",
@@ -81,7 +82,9 @@ else:
              with st.container(border= True):
                  st.subheader(Books.get("title"))
                  st.divider() 
-                 st.subheader(Books.get("dueDate")[0:10])
+                 date = datetime.fromisoformat((Books.get(dueDate)))
+                 Date = date.strftime("%d-%m-%Y")
+                 st.subheader(Date)
                  st.divider() 
                  st.subheader(Books.get("status"))
                  st.divider() 
