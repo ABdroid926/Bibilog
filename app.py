@@ -67,6 +67,7 @@ if st.session_state["logged in"] == "False":
                 st.rerun()
 else:
      if st.session_state["username"] == user_name and st.session_state["is_admin"] == "False" :
+         st.title(f"Welcome {user_name} !")
          
 
 
