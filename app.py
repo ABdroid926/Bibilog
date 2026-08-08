@@ -25,7 +25,7 @@ if radiobutton == " 📖 Log In!" and st.session_state["logged in"] == "False" :
     RESULT = response.text
     
     if RESULT == "Success" : 
-      st.session_state["logged in"] == "True" 
+      st.session_state["logged in"] = user_name
       
    
 elif radiobutton == "✏️ Sign Up !" : 
