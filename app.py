@@ -76,6 +76,7 @@ else:
          except :
           result = response.text.strip()
              
+          st.write(result)   
          for book in result : 
              with st.container(border= True):
                  st.subheader(book.get("title"))
