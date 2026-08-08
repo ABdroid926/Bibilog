@@ -77,13 +77,13 @@ else:
           result = response.text.strip()
              
           st.write(result)   
-         for book in result : 
+         for Books in result : 
              with st.container(border= True):
-                 st.subheader(book.get("title"))
+                 st.subheader(Books.get("title"))
                  st.divider() 
-                 st.subheader(book.get("dueDate"))
+                 st.subheader(Books.get("dueDate"))
                  st.divider() 
-                 st.subheader(book.get("status"))
+                 st.subheader(Books.get("status"))
                  st.divider() 
                  
 
