@@ -14,6 +14,9 @@ sheet_url = st.secrets["SHEET_URL"]
 if "logged in" not in st.session_state : 
   st.session_state["logged in"] = "False"
 
+if "is_admin" not in st.session_state : 
+  st.session_state["is_admin"] = "False"
+
 radiobutton = st.radio("📌 Please do choose an action!",[" 📖 Log In!","✏️ Sign Up !"],horizontal = True) 
 
 if radiobutton == " 📖 Log In!" and st.session_state["logged in"] == "False" : 
@@ -26,9 +29,15 @@ if radiobutton == " 📖 Log In!" and st.session_state["logged in"] == "False" :
     payload = {"action":"login","username": user_name,"password":user_pass}
     response = rq.post(sheet_url,json = payload) 
     RESULT = response.text
+    st.write(RESULT)
     
     if RESULT == "Success" : 
       st.session_state["logged in"] = "True"
+      st.session_state["is_admin"] = "False"
+      
+    elif RESULT == "Admin Success"  :
+      st.session_state["logged in"] = "True"
+      st.session_state["is_admin"] = "False"
    
 elif radiobutton == "✏️ Sign Up !" : 
     with st.form("SignUp_Page"):
