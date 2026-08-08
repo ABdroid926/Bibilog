@@ -77,7 +77,7 @@ else:
           result = response.text.strip()
              
          for book in result : 
-             with st.container(border="True"):
+             with st.container(border= True):
                  st.subheader(book.get("title"))
                  st.divider() 
                  st.subheader(book.get("dueDate"))
