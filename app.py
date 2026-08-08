@@ -32,7 +32,7 @@ elif radiobutton == "✏️ Sign Up !" :
       SUBMIT = st.form_submit_button("🚀 Sign Up!")
       
     if SUBMIT :   
-      payload = {"action":"register","username":new_user,"password":user_pass}
+      payload = {"action":"register","username":new_user,"password":new_pass}
       response = rq.post(sheet_url,json = payload)
       result = response.text 
       if result == "User Exists" : 
