@@ -17,7 +17,7 @@ if "logged in" not in st.session_state :
 if "is_admin" not in st.session_state : 
   st.session_state["is_admin"] = "False"
   
-if st.session_state["logged in"] == "False"
+if st.session_state["logged in"] == "False" :
    radiobutton = st.radio("📌 Please do choose an action!",[" 📖 Log In!","✏️ Sign Up !"],horizontal = True) 
 
 if radiobutton == " 📖 Log In!" and st.session_state["logged in"] == "False" : 
