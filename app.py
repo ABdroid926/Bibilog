@@ -10,6 +10,7 @@ st.set_page_config(
 
 st.title("📚 Bibilog : Library Management System")
 sheet_url = st.secrets["SHEET_URL"]
+st.session_state["logged in"] == "False"
 
 radiobutton = st.radio("📌 Please do choose an action!",[" 📖 Log In!","✏️ Sign Up !"],horizontal = True) 
 
@@ -25,8 +26,7 @@ if radiobutton == " 📖 Log In!" and st.session_state["logged in"] == "False" :
     RESULT = response.text
     
     if RESULT == "Success" : 
-      st.session_state["logged in"] = user_name
-      
+      st.session_state["logged in"] == "True"
    
 elif radiobutton == "✏️ Sign Up !" : 
     with st.form("SignUp_Page"):
