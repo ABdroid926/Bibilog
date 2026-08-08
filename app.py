@@ -67,7 +67,7 @@ if st.session_state["logged in"] == "False":
                 st.rerun()
 else:
      if  st.session_state["is_admin"] == "False" :
-         st.title(f"Welcome {st.session_state["username"]} !",text_alignment = "centre")
+         st.title(f"Welcome {st.session_state["username"]} !",text_alignment = "center")
          st.write()
          st.write()
          st.divider() 
