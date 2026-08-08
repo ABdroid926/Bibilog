@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import requests as rq
-import datetime as dt 
+import datetime 
 
 st.set_page_config(
     page_title="Bibilog",
