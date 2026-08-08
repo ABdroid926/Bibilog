@@ -29,16 +29,16 @@ elif radiobutton == "✏️ Sign Up !" :
     with st.form("SignUp_Page"):
       new_user = st.text_input("Please do enter your username! :")
       new_pass = st.text_input("Please do enter your password! :",type="password")
-      Submit = st.form_submit_button("🚀 Sign Up!")
+      SUBMIT = st.form_submit_button("🚀 Sign Up!")
       
-    if Submit :   
+    if SUBMIT :   
       payload = {"action":"register","username":new_user,"password":user_pass}
       response = rq.post(sheet_url,json = payload)
       result = response.text 
-       if result == "User Exists" : 
+      if result == "User Exists" : 
          st.error("❌ Oh dear.. that username is already taken! How about a new one!") 
 
-       else : 
+      else : 
          st.success("✅ Alright! your new account is created! Please do Log In!!")
       
       
