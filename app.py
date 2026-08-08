@@ -72,10 +72,10 @@ else:
          response = rq.post(sheet_url, json=payload)
          result = response.json()
 
-        if not result : 
+    if not result : 
               st.success("You currently have no books checked out. Go visit the library!") 
               
-        else : 
+    else : 
               st.json(Result)
          
 
