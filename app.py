@@ -80,11 +80,11 @@ else:
           
          for Books in result : 
              with st.container(border= True):
-                 st.subheader(Books.get("title"))
+                 st.markdown(f"**:blue[{Books.get("title")}]**")
                  st.divider() 
-                 st.subheader(Books.get("dueDate")[0:10])
+                 st.markdown(f"- :blue[{Books.get("dueDate")[0:10]}]")
                  st.divider()
-                 st.subheader(Books.get("status"))
+                 st.markdown(f"- :blue[{Books.get("status")}]")
                  st.divider() 
                  
 
