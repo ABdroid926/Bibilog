@@ -75,6 +75,17 @@ else:
           result = response.json() 
          except :
           result = response.text.strip()
+             
+         for book in result : 
+             with st.container(border="True"):
+                 st.subheader(book.get("title"))
+                 st.divider() 
+                 st.subheader(book.get("dueDate"))
+                 st.divider() 
+                 st.subheader(book.get("status"))
+                 st.divider() 
+                 
+
          
          
 
