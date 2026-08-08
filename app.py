@@ -70,7 +70,11 @@ else:
          st.title(f"Welcome {st.session_state['username']} !",text_alignment = "center")
          payload = {"action": "get_user_books", "username": st.session_state["username"]}
          response = rq.post(sheet_url, json=payload)
-         result = response.json() 
+         
+         try :
+          result = response.json() 
+         except :
+          result = response.text.strip()
          
          
 
