@@ -70,13 +70,15 @@ else:
          st.title(f"Welcome {st.session_state['username']} !",text_alignment = "center")
          payload = {"action": "get_user_books", "username": st.session_state["username"]}
          response = rq.post(sheet_url, json=payload)
-         result = response.json()
+         result = response.json() 
+          if not result : 
+              st.success("You currently have no checked out books, Why not visit the library?)
 
-if not result : 
-              st.success("You currently have no books checked out. Go visit the library!") 
-              
-else : 
-              st.json(Result)
+          else : 
+              st.json(result)
+         
+
+
          
 
 
