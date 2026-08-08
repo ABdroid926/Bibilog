@@ -25,7 +25,7 @@ if radiobutton == " 📖 Log In!" :
     result = response.text
     st.write(result)
 
-else radiobutton == "✏️ Sign Up !"  
+else radiobutton == "✏️ Sign Up !" : 
     with st.form("SignUp_Page"):
       new_user = st.text_input("Please do enter your username! :")
       new_pass = st.text_input("Please do enter your password! :",type="password")
