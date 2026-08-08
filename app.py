@@ -81,7 +81,7 @@ else:
              with st.container(border= True):
                  st.subheader(Books.get("title"))
                  st.divider() 
-                 st.subheader(Books.get("dueDate"))
+                 st.subheader(Books.get("dueDate")[0:10])
                  st.divider() 
                  st.subheader(Books.get("status"))
                  st.divider() 
