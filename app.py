@@ -22,8 +22,8 @@ if st.session_state["logged in"] == "False":
 
     if radiobutton == " 📖 Log In!":
         with st.form("LogIn_Page"):
-            user_name = st.text_input("Please do enter your username! :")
-            user_pass = st.text_input("Please do enter your password! :", type="password")
+            user_name = st.text_input("Please do enter your username! :").strip()
+            user_pass = st.text_input("Please do enter your password! :", type="password").strip()
             submit = st.form_submit_button("🚀 Log In!")
             
         if submit:
@@ -46,8 +46,8 @@ if st.session_state["logged in"] == "False":
     
     elif radiobutton == "✏️ Sign Up !":
         with st.form("SignUp_Page"):
-            new_user = st.text_input("Please do enter your username! :")
-            new_pass = st.text_input("Please do enter your password! :", type="password")
+            new_user = st.text_input("Please do enter your username! :").strip()
+            new_pass = st.text_input("Please do enter your password! :", type="password").strip()
             SUBMIT = st.form_submit_button("🚀 Sign Up!")
             
         if SUBMIT:
@@ -60,6 +60,10 @@ if st.session_state["logged in"] == "False":
             else:
                 st.success("✅ Alright! your new account is created! Please do Log In!!")
                 st.rerun()
+
+
+
+
  
       
 
