@@ -10,7 +10,9 @@ st.set_page_config(
 
 st.title("📚 Bibilog : Library Management System")
 sheet_url = st.secrets["SHEET_URL"]
-st.session_state["logged in"] == "False"
+
+if "logged in" not in st.session_state : 
+  st.session_state["logged in"] == "False"
 
 radiobutton = st.radio("📌 Please do choose an action!",[" 📖 Log In!","✏️ Sign Up !"],horizontal = True) 
 
