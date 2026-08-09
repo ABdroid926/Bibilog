@@ -125,7 +125,6 @@ else:
 
         with cen : 
              for books in all_result :
-                 st.space(size = "medium")
                  with st.container(border = True) :
                      st.markdown(f"**{books.get('title')}**")
                      st.markdown(f"- :grey[checked out by : {books.get('borrowedBy')}]")
