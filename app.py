@@ -130,7 +130,13 @@ else:
                      st.markdown(f"- :grey[checked out by : {books.get('borrowedBy')}]")
                      st.markdown(f"- :grey[due on : {books.get('dueDate')[0:10]}]")
                      st.markdown(f"- :green[ {books.get('status')}]")
-                     st.button("↩️ Return", key=f"btn_{books.get('bookID')}",width = "stretch") 
+                     rtn_button = st.button("↩️ Return", key=f"btn_{books.get('bookID')}",width = "stretch") 
+
+                     if rtn_button == True : 
+                        rtn_payload = {"action":"return_book","bookID":book.get('bookID')}
+                        rtn_response = rq.post(sheet_url,rtn_payload)
+                        rtn_result = rtn_response.text
+                        st.rerun()
 
         
                        
