@@ -11,6 +11,7 @@ st.set_page_config(
 
 st.title("📚 Bibilog : Library Management System")
 st.divider()
+st.space(size ="medium")
 sheet_url = st.secrets["SHEET_URL"]
 
 if "logged in" not in st.session_state:
