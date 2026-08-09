@@ -85,7 +85,17 @@ else:
                  st.markdown(f"**:blue[{Books.get("title")}]**")
                  st.markdown(f"- :blue[{Books.get("dueDate")[0:10]}]")
                  st.markdown(f"- :blue[{Books.get("status")}]")
-                 
+
+      elif st.session_state["is_admin"] == "True": 
+          st.title("Admin Panel 🛡️") 
+          st.space(size="medium")
+          st.subheader("📥 Issue & Checkout Desk")
+          with st.form("Issue") : 
+              bookID = st.text_input
+              with st.container(border=True) : 
+                  lender_username = st.text_input("Enter Student Username") 
+                  loan_period = st.number_input("Loan Period(Days)", value = 7)
+              
                  
 
          
