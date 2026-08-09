@@ -134,7 +134,7 @@ else:
 
                      if rtn_button == True : 
                         rtn_payload = {"action":"return_book","bookID":books.get('bookID')}
-                        rtn_response = rq.post(sheet_url,rtn_payload)
+                        rtn_response = rq.post(sheet_url,json=rtn_payload)
                         rtn_result = rtn_response.text
                         st.rerun()
 
