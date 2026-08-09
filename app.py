@@ -104,12 +104,13 @@ else:
                 if submit : 
                    payload = {"action": "issue_book","borrowed_by": lender_username,"id":bookID,"due_date":loan_period}
                    response = rq.post(sheet_url, json=payload) 
+                   result = response.text 
                     
                    if response == "success" :
                        st.success("Book Issued! Happy Reading!!") 
                    else :
                        st.error("❌ Oops, book not found! Please ensure the correct ID is entered")
-                       st.write(response)
+                       
 
                     
 
