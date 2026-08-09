@@ -80,10 +80,10 @@ else:
              
          st.subheader("Your checked out books:") 
          for Books in result : 
-             st.container(
+             st.Markdown(
                  """ 
                  <style>
-                 .stMarkdown{
+                 .stContainer{
                  background-color : #4287f5; 
                  border : 0.5px; 
                  border-radius : 0.5px;
