@@ -111,8 +111,14 @@ else:
                    else :
                        st.error("❌ Oops, book not found! Please ensure the correct ID is entered")
         st.divider()
-        st.space(size = "medium")   
-                      
+        st.space(size = "medium")  
+        st.subheader("📋 Active Loans & Statuses")
+        lef,rig,cen = st.columns([1,8,1])  
+        
+        all_payload = {"action": "get_all_loans"} 
+        all_response = rq.post(sheet_url, json=payload)
+        all_result = all_response.text 
+        
                        
 
                     
