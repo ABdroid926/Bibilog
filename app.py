@@ -89,7 +89,7 @@ else:
                 st.markdown(f"- :blue[{Books.get('dueDate')[0:10]}]")
                 st.markdown(f"- :blue[{Books.get('status')}]")
 
-    elif st.session_state["is_admin"] == "True": 
+    elif st.session_state.get("is_admin") == "True": 
         st.title("Admin Panel 🛡️") 
         st.divider()
         st.subheader("📥 Issue & Checkout Desk :")
@@ -131,7 +131,9 @@ else:
                      st.markdown(f"- :grey[due on : {books.get('dueDate')[0:10]}]")
                      st.markdown(f"- :green[ {books.get('status')}]")
                      st.button("↩️ Return", key=f"btn_{books.get('bookID')}",width = "stretch") 
-                     
+
+        
+                       
                      
                      
         
