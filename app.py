@@ -11,7 +11,6 @@ st.set_page_config(
 
 st.title("📚 Bibilog : Library Management System")
 st.divider()
-st.space(size ="large")
 sheet_url = st.secrets["SHEET_URL"]
 
 if "logged in" not in st.session_state:
@@ -20,7 +19,7 @@ if "logged in" not in st.session_state:
 if "is_admin" not in st.session_state:
     st.session_state["is_admin"] = "False"
 
-if "username" not in st.session_state : 
+if "username" not in st.session_state: 
     st.session_state["username"] = ""
 
 if st.session_state["logged in"] == "False":
@@ -68,50 +67,29 @@ if st.session_state["logged in"] == "False":
                 st.success("✅ Alright! your new account is created! Please do Log In!!")
                 st.rerun()
 else:
-     if  st.session_state["is_admin"] == "False" :
-         st.title(f"✨ Welcome {st.session_state['username']} ! ✨ ",text_alignment = "center")
-         st.space(size = "medium")
-         payload = {"action": "get_user_books", "username": st.session_state["username"]}
-         response = rq.post(sheet_url, json=payload)
+    if st.session_state["is_admin"] == "False":
+        st.title(f"✨ Welcome {st.session_state['username']} ! ✨ ")
+        payload = {"action": "get_user_books", "username": st.session_state["username"]}
+        response = rq.post(sheet_url, json=payload)
          
-         try :
-          result = response.json() 
-         except :
-          result = response.text.strip()
+        try:
+            result = response.json() 
+        except:
+            result = response.text.strip()
              
-         st.subheader("Your checked out books:") 
-         for Books in result : 
-               with st.container(border=True):
-                 st.markdown(f"**:blue[{Books.get("title")}]**")
-                 st.markdown(f"- :blue[{Books.get("dueDate")[0:10]}]")
-                 st.markdown(f"- :blue[{Books.get("status")}]")
+        st.subheader("Your checked out books:") 
+        for Books in result:
+            with st.container(border=True):
+                st.markdown(f"**:blue[{Books.get('title')}]**")
+                st.markdown(f"- :blue[{Books.get('dueDate')[0:10]}]")
+                st.markdown(f"- :blue[{Books.get('status')}]")
 
-      elif st.session_state["is_admin"] == "True": 
-         st.title("Admin Panel 🛡️") 
-          st.space(size="medium")
-          st.subheader("📥 Issue & Checkout Desk")
-          with st.form("Issue") : 
-              bookID = st.text_input("enter book ID")
-              with st.container(border=True) : 
-                  lender_username = st.text_input("Enter Student Username") 
-                  loan_period = st.number_input("Loan Period(Days)", value = 7)
-              
-                 
-
-         
-         
-
-
-         
-
-
-
-
-
-
-
- 
-      
-
-
-   
+    elif st.session_state["is_admin"] == "True": 
+        st.title("Admin Panel 🛡️") 
+        st.subheader("📥 Issue & Checkout Desk")
+        with st.form("Issue"):
+            bookID = st.text_input("Enter Book ID")
+            with st.container(border=True):
+                lender_username = st.text_input("Enter Student Username") 
+                loan_period = st.number_input("Loan Period(Days)", value=7)
+            submit_issue = st.form_submit_button("🚀 Issue Book")
