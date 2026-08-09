@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import requests as rq
-import datetime 
+
 
 st.set_page_config(
     page_title="Bibilog",
@@ -68,7 +68,8 @@ if st.session_state["logged in"] == "False":
                 st.rerun()
 else:
      if  st.session_state["is_admin"] == "False" :
-         st.title(f"Welcome {st.session_state['username']} !",text_alignment = "center")
+         st.title(f"✨ Welcome {st.session_state['username']} ✨ !",text_alignment = "center")
+         st.title()
          payload = {"action": "get_user_books", "username": st.session_state["username"]}
          response = rq.post(sheet_url, json=payload)
          
