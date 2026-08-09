@@ -117,7 +117,10 @@ else:
         
         all_payload = {"action": "get_all_loans"} 
         all_response = rq.post(sheet_url, json=all_payload)
-        all_result = all_response.text 
+        try:
+            all_result = response.json() 
+        except:
+            all_result = response.text.strip() 
 
         with center : 
              for books in all_result : 
