@@ -85,7 +85,7 @@ else:
                 st.markdown(f"- :blue[{Books.get('status')}]")
 
     elif st.session_state["is_admin"] == "True": 
-        st.title(f"Admin Panel 🛡️") 
+        st.title("Admin Panel 🛡️") 
         st.divider()
         st.subheader("📥 Issue & Checkout Desk :")
         st.space("medium")
@@ -96,4 +96,17 @@ else:
              with st.container(border=True):
                 lender_username = st.text_input("Enter Student Username") 
                 loan_period = st.number_input("Loan Period(Days)", value=7)
-                submit = st.form_submit_button("🚀 Issue book!", use_container_width = True)       
+                submit = st.form_submit_button("🚀 Issue book!", use_container_width = True)    
+
+                if submit : 
+                   payload = {"action": "issue_book","borrowed_by": lender_username,"id":bookID,"due_date":loan_period}
+                   response = rq.post(sheet_url, json=payload) 
+                    
+                   if response == "Success" :
+                       st.success("Book Issued! Happy Reading!!") 
+                   else :
+                       st.error("❌ Oops, book not found! Please ensure the correct ID is entered")
+
+                    
+
+
