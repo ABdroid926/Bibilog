@@ -69,9 +69,7 @@ if st.session_state["logged in"] == "False":
 else:
      if  st.session_state["is_admin"] == "False" :
          st.title(f"✨ Welcome {st.session_state['username']} ! ✨ ",text_alignment = "center")
-         st.write()
-         st.write()
-         st.write()
+         st.space(size = "medium")
          payload = {"action": "get_user_books", "username": st.session_state["username"]}
          response = rq.post(sheet_url, json=payload)
          
