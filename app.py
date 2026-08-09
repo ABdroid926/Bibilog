@@ -110,6 +110,8 @@ else:
                        st.success("Book Issued! Happy Reading!!") 
                    else :
                        st.error("❌ Oops, book not found! Please ensure the correct ID is entered")
+         st.divider()
+         st.space(size = "medium")   
                       
                        
 
