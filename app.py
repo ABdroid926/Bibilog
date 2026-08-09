@@ -80,7 +80,7 @@ else:
              
          st.subheader("Your checked out books:") 
          for Books in result : 
-             st.markdown(
+             st.container(
                  """ 
                  <style>
                  .stMarkdown{
