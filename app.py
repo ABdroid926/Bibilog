@@ -80,6 +80,19 @@ else:
              
          st.subheader("Your checked out books:") 
          for Books in result : 
+             st.markdown(
+                 """ 
+                 <style>
+                 .stMarkdown{
+                 background-color : #4287f5; 
+                 border : 0.5px; 
+                 border-radius : 0.5px;
+                 }
+                 
+                 </style>
+                 """,
+                 unsafe_allow_html = True
+             )
              with st.container(border=True):
                  st.markdown(f"**:blue[{Books.get("title")}]**")
                  st.markdown(f"- :blue[{Books.get("dueDate")[0:10]}]")
