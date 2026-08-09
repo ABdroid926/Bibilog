@@ -72,6 +72,8 @@ if st.session_state["logged in"] == "False":
 else:
     if st.session_state["is_admin"] == "False":
         st.title(f"✨ Welcome {st.session_state['username']} ! ✨ ")
+        st.divider()
+        st.space(size="medium")
         payload = {"action": "get_user_books", "username": st.session_state["username"]}
         response = rq.post(sheet_url, json=payload)
          
@@ -118,9 +120,9 @@ else:
         all_payload = {"action": "get_all_loans"} 
         all_response = rq.post(sheet_url, json=all_payload)
         try:
-            all_result = response.json() 
+            all_result = all_response.json() 
         except:
-            all_result = response.text.strip() 
+            all_result = all_response.text.strip() 
 
         with center : 
              for books in all_result : 
