@@ -83,7 +83,7 @@ else:
              st.markdown(
                  """ 
                  <style>
-                 .stContainer{
+                 .stcontainer{
                  background-color : #4287f5; 
                  border : 0.5px; 
                  border-radius : 0.5px;
