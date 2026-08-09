@@ -130,7 +130,7 @@ else:
                      st.markdown(f"- :grey[checked out by : {books.get('borrowedBy')}]")
                      st.markdown(f"- :grey[due on : {books.get('dueDate')[0:10]}]")
                      st.markdown(f"- :green[ {books.get('status')}]")
-                     st.button("↩️ Return", key=f"btn_{bookID}") 
+                     st.button("↩️ Return", key=f"btn_{books.get('bookID')}",width = "stretch") 
                      
                      
                      
