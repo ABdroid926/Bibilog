@@ -102,7 +102,7 @@ else:
                 submit = st.form_submit_button("🚀 Issue book!", use_container_width = True)    
 
                 if submit : 
-                   payload = {"action": "issue_book","borrowed_by": lender_username,"id":bookID,"due_date":loan_period}
+                   payload = {"action": "issue_book","borrowed_by": lender_username,"bookID":bookID,"due_date":loan_period}
                    response = rq.post(sheet_url, json=payload) 
                    result = response.text 
                     
