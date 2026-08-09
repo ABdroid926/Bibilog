@@ -113,11 +113,22 @@ else:
         st.divider()
         st.space(size = "medium")  
         st.subheader("📋 Active Loans & Statuses")
-        lef,rig,cen = st.columns([1,8,1])  
+        
         
         all_payload = {"action": "get_all_loans"} 
         all_response = rq.post(sheet_url, json=all_payload)
         all_result = all_response.text 
+
+         with center : 
+             for books in all_result : 
+                 with st.container(border = True) :
+                     st.markdown(f"**{books.get('title')}**")
+                     st.markdown(f"- :grey[checked out by : {books.get('borrowed_by')}]")
+                     st.markdown(f"- :grey[due on : {books.get('dueDate')}]")
+                     st.markdown(f"- :green[ {books.get('status')}]") 
+                     st.space(size = "small")
+                     
+                     
         
                        
 
