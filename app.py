@@ -85,11 +85,13 @@ else:
                 st.markdown(f"- :blue[{Books.get('status')}]")
 
     elif st.session_state["is_admin"] == "True": 
+        left,center,right = st.columns([2,2,2])
         st.title("Admin Panel 🛡️") 
         st.subheader("📥 Issue & Checkout Desk")
-        with st.form("Issue"):
-            bookID = st.text_input("Enter Book ID")
-            with st.container(border=True):
+        with center : 
+         with st.form("Issue", use_container_width = True):
+             bookID = st.text_input("Enter Book ID")
+             with st.container(border=True, use_container_width = True):
                 lender_username = st.text_input("Enter Student Username") 
                 loan_period = st.number_input("Loan Period(Days)", value=7)
-                submit = st.form_submit_button("🚀 Issue book!",align = "center")       
+                submit = st.form_submit_button("🚀 Issue book!")       
