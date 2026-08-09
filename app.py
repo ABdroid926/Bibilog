@@ -85,9 +85,9 @@ else:
                 st.markdown(f"- :blue[{Books.get('status')}]")
 
     elif st.session_state["is_admin"] == "True": 
-        st.title("Admin Panel 🛡️") 
+        st.title("Admin Panel 🛡️",align = center) 
         st.divider()
-        st.subheader("📥 Issue & Checkout Desk")
+        st.subheader("📥 Issue & Checkout Desk :")
         st.space("medium")
         left,center,right = st.columns([1,8,1])
         with center : 
