@@ -89,7 +89,7 @@ else:
         st.divider()
         st.subheader("📥 Issue & Checkout Desk")
         st.space("medium")
-        left,center,right = st.columns([1,4,1])
+        left,center,right = st.columns([1,8,1])
         with center : 
          with st.form("Issue"):
              bookID = st.text_input("Enter Book ID")
