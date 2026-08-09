@@ -112,11 +112,10 @@ else:
                        st.success("Book Issued! Happy Reading!!") 
                    else :
                        st.error("❌ Oops, book not found! Please ensure the correct ID is entered")
-        st.divider()
-        st.space(size = "medium")  
+        st.divider()  
         st.subheader("📋 Active Loans & Statuses")
-        
-        
+        st.space(size = "medium")
+        lef,cen,rig = st.columns([1,8,1])
         all_payload = {"action": "get_all_loans"} 
         all_response = rq.post(sheet_url, json=all_payload)
         try:
@@ -124,9 +123,10 @@ else:
         except:
             all_result = all_response.text.strip() 
 
-        with center : 
-             for books in all_result : 
-                 with st.container(border = True) :
+        with cen : 
+             for books in all_result :
+                 st.space(size = "medium")
+                 with st.container(border = True,use_container_width = True) :
                      st.markdown(f"**{books.get('title')}**")
                      st.markdown(f"- :grey[checked out by : {books.get('borrowed_by')}]")
                      st.markdown(f"- :grey[due on : {books.get('dueDate')}]")
