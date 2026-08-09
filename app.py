@@ -116,7 +116,7 @@ else:
         lef,rig,cen = st.columns([1,8,1])  
         
         all_payload = {"action": "get_all_loans"} 
-        all_response = rq.post(sheet_url, json=payload)
+        all_response = rq.post(sheet_url, json=all_payload)
         all_result = all_response.text 
         
                        
