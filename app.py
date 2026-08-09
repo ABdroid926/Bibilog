@@ -86,8 +86,10 @@ else:
 
     elif st.session_state["is_admin"] == "True": 
         st.title("Admin Panel 🛡️") 
+        st.divider()
         st.subheader("📥 Issue & Checkout Desk")
-        left,center,right = st.columns([1,2,1])
+        st.space("medium")
+        left,center,right = st.columns([1,4,1])
         with center : 
          with st.form("Issue"):
              bookID = st.text_input("Enter Book ID")
