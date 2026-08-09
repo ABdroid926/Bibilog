@@ -106,7 +106,7 @@ else:
                    response = rq.post(sheet_url, json=payload) 
                    result = response.text 
                     
-                   if response == "success" :
+                   if response == "Success" :
                        st.success("Book Issued! Happy Reading!!") 
                    else :
                        st.error("❌ Oops, book not found! Please ensure the correct ID is entered")
