@@ -36,7 +36,7 @@ if st.session_state["logged in"] == "False":
             response = rq.post(sheet_url, json=payload)
             RESULT = response.text
             st.write(RESULT)
-            st.stop()
+            
            
             
             if RESULT == "Success":
