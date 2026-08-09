@@ -129,7 +129,7 @@ else:
                  with st.container(border = True) :
                      st.markdown(f"**{books.get('title')}**")
                      st.markdown(f"- :grey[checked out by : {books.get('borrowed_by')}]")
-                     st.markdown(f"- :grey[due on : {books.get('dueDate')}]")
+                     st.markdown(f"- :grey[due on : {books.get('dueDate')[0:10]}]")
                      st.markdown(f"- :green[ {books.get('status')}]") 
                      
                      
