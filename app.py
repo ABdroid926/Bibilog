@@ -82,7 +82,6 @@ else:
          for Books in result : 
              with st.container(border=True):
                  st.markdown(f"**:blue[{Books.get("title")}]**")
-                 st.markdown("---")
                  st.markdown(f"- :blue[{Books.get("dueDate")[0:10]}]")
                  st.markdown(f"- :blue[{Books.get("status")}]")
                  
