@@ -35,6 +35,7 @@ if st.session_state["logged in"] == "False":
             payload = {"action": "login", "username": user_name, "password": user_pass}
             response = rq.post(sheet_url, json=payload)
             RESULT = response.text
+            st.write(RESULT)
             
             if RESULT == "Success":
                 st.session_state["logged in"] = "True"
