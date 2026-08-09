@@ -64,7 +64,7 @@ if st.session_state["logged in"] == "False":
             response = rq.post(sheet_url, json=payload)
             result = response.text
             
-            if result == "User Exists":
+            if result.strip() == "User Exists":
                 st.error("❌ Oh dear.. that username is already taken! How about a new one!")
             else:
                 st.success("✅ Alright! your new account is created! Please do Log In!!")
@@ -110,7 +110,7 @@ else:
                        st.success("Book Issued! Happy Reading!!") 
                    else :
                        st.error("❌ Oops, book not found! Please ensure the correct ID is entered")
-                       st.write(result)
+                      
                        
 
                     
