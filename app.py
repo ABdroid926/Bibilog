@@ -85,9 +85,9 @@ else:
                 st.markdown(f"- :blue[{Books.get('status')}]")
 
     elif st.session_state["is_admin"] == "True": 
-        left,center,right = st.columns([1,2,1])
         st.title("Admin Panel 🛡️") 
         st.subheader("📥 Issue & Checkout Desk")
+        left,center,right = st.columns([1,2,1])
         with center : 
          with st.form("Issue"):
              bookID = st.text_input("Enter Book ID")
