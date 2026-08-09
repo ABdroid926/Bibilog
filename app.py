@@ -131,7 +131,7 @@ else:
                      st.markdown(f"- :grey[checked out by : {books.get('borrowed_by')}]")
                      st.markdown(f"- :grey[due on : {books.get('dueDate')}]")
                      st.markdown(f"- :green[ {books.get('status')}]") 
-                     st.space(size = "small")
+                     
                      
                      
         
