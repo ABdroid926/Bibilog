@@ -19,7 +19,8 @@ Add this javascript code to google apps script (available under "extensions") :
 
  <details>
     <summary> Google Apps Script function(white-coded) </summary>
-   
+
+``` javascript   
 var ss = SpreadsheetApp.getActiveSpreadsheet();
 var userSheet = ss.getSheetByName("Users");
 var bookSheet = ss.getSheetByName("Books");
@@ -169,6 +170,7 @@ function doPost(e) {
     return ContentService.createTextOutput("Script Error: " + err.toString());
   }
 }
+```
 </details> 
 
 STEP 3 : dont worry,this is the last set.
