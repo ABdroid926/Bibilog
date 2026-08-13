@@ -177,8 +177,12 @@ STEP 3 : dont worry,this is the last set.
 
 - Make sure you own a streamlit account 
 - Add the gsheet link to streamlit secrets as "SHEET_URL"
-- fork app.py to your own github 
-- deploy it on streamlit! 
+- fork app.py , .github/workflows & .streamlit to your own account
+- deploy it on streamlit!
+
+ NOTE : Bibilog was made as a part of a school project, however you are free to use,modify or share Bibilog for any personal and non-commercial usage. 
+
+ 
 
 
    
